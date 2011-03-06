@@ -101,3 +101,5 @@ svn-rv-ci () {
     fi
 }
 alias svnurl="svn info | grep URL | awk  -F': ' '{ print \$2 }'"
+alias svnver="change-svn-wc-format.py"
+
