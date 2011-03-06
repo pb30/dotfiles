@@ -41,7 +41,7 @@ if [ -f /etc/bash_completion ]; then
     source /etc/bash_completion
 fi
 
-if [ -f ${SCRIPT_PATH}/git-completion ]; then
+if [ -f ${SCRIPT_PATH}/git-completion ] && which git &> /dev/null; then
     source ${SCRIPT_PATH}/git-completion
 fi
 
