@@ -109,10 +109,7 @@ if [ "$gitchange" == "y" ]; then
     if [ -n "$input_githubtoken" ]; then
       git config --global github.token "${input_githubtoken}"
     fi
-    
+
 fi
 
-###################### RELOAD
-source ~/.bash_profile
-
-echo "Finished!"
+echo "Finished! To reload settings, run: source ~/.bash_profile"
