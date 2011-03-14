@@ -2,6 +2,7 @@
 set nonewlines # Don't add newline to end of file
 set tabstospaces
 set tabsize 4
+set nowrap on
 
 ###################### HTML HIGHLIGHTING
 syntax "html" "\.[p~]html$"
