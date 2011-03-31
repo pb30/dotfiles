@@ -57,5 +57,5 @@ source ${SCRIPT_PATH}/z.sh
 
 ######################  PATH + Private bin
 if [ -d ${SCRIPT_PATH}/bin ] ; then
-    PATH="${SCRIPT_PATH}/bin:$PATH"
+    PATH="${SCRIPT_PATH}/bin:${SCRIPT_PATH}/bin/git-flow:$PATH"
 fi
