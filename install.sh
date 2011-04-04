@@ -54,6 +54,8 @@ fi
 if which git &> /dev/null; then
     git config --global alias.br "branch"
     git config --global alias.ci "commit"
+    git config --global alias.cia "commit -a -m"
+    git config --global alias.ciaa "commit -a --amend -C head"
     git config --global alias.co "checkout"
     git config --global alias.st "status"
     git config --global alias.rb "rebase"
@@ -88,7 +90,7 @@ if which git &> /dev/null; then
     echo "Current Git user settings:"
     echo "user name/email: `git config --global --get user.name` / `git config --global --get user.email`"
     echo "gitub user/token: `git config --global --get github.user` / `git config --global --get github.token`"
-    read -p "Change Git info? [n/y]" -e gitchange
+    read -p "Change Git info? [n/y] " -e gitchange
     if [ "$gitchange" == "y" ]; then
 
         read -p "Git: Enter user.name [`git config --global --get user.name`]: " -e input_gitname
