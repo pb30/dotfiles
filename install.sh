@@ -86,6 +86,8 @@ if which git &> /dev/null; then
     git config --global push.default "tracking"
     git config --global branch.autosetupmerge "true"
     git config --global merge.conflictstyle "diff3"
+    git config --global merge.stat true
+    git config --global core.whitespace trailing-space
 
     echo "Current Git user settings:"
     echo "user name/email: `git config --global --get user.name` / `git config --global --get user.email`"
