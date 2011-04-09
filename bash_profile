@@ -17,6 +17,8 @@ export HISTCONTROL=ignoredups
 export HISTFILESIZE=5000
 export HISTSIZE=5000
 
+export ACK_OPTIONS="-i --sort-files --color --follow --group"
+
 ###################### Redefining default params
 ######## Color
 if [ -x /usr/bin/dircolors ] ; then
