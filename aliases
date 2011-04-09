@@ -9,6 +9,7 @@ alias la="ll -a"
 
 alias df="df -h"
 alias h="history"
+alias g="git"
 
 alias empty="cat /dev/null > "
 
