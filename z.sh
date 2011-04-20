@@ -28,7 +28,7 @@ z() {
  local datafile="$HOME/.z"
 
  # bail out if we don't own ~/.z (we're another user but our ENV is still set)
- [ "$(ls -l "$datafile" | cut -d' ' -f 3)" = "$USER" ] || return
+ [ "$(ls -l "$datafile" | cut -d' ' -f 4)" = "$USER" ] || return
 
  # add entries
  if [ "$1" = "--add" ]; then
