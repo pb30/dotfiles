@@ -9,6 +9,7 @@ popd  > /dev/null
 
 alias bashreload="${SCRIPT_PATH}/install.sh"
 alias reloadbash="bashreload"
+alias dotsync=${SCRIPT_PATH}/bin/sync-dotfiles.sh
 
 ###################### Bash settings
 export EDITOR=nano

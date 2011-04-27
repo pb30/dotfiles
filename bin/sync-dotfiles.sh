@@ -22,5 +22,5 @@ if [ $1 ] ; then
     fi
     ssh $@ "~/.dotfiles/install.sh;"
 else
-    echo "'$1' is not a valid server! Usage: ./sync-dotfiles.sh user@hostname"
+    echo "'$1' is not a valid server! Usage: dotsync user@hostname"
 fi

@@ -57,34 +57,39 @@ if which git &> /dev/null; then
     git config --global alias.cia "commit -a -m"
     git config --global alias.ciaa "commit -a --amend -C head"
     git config --global alias.co "checkout"
-    git config --global alias.st "status"
+    git config --global alias.st "status -sb"
     git config --global alias.rb "rebase"
     git config --global alias.rbi "rebase -i"
     git config --global alias.rba "rebase --abort"
     git config --global alias.rbc "rebase --continue"
     git config --global alias.rbs "rebase --skip"
     git config --global alias.cpk "cherry-pick"
+    git config --global alias.dt "difftool"
     git config --global alias.diff "diff --word-diff"
+
+    git config --global alias.last '!git lgs -1 --relative-date --graph HEAD'
+    git config --global alias.last5 '!git lgs -5 --relative-date --graph HEAD'
+    git config --global alias.lg "log --pretty='%C(yellow)%h - %C(blue)%an%Creset - %ar%C(red)%d%Creset%n%s%n' --graph"
+    git config --global alias.lgs "log --pretty='%C(yellow)%h - %C(blue)%an%Creset - %ar%C(red)%d%Creset%n%s%n' --graph --stat"
+    git config --global alias.slg "log --pretty='%C(yellow)%h:%C(blue)%an%Creset -%C(red)%d%Creset %s %Cgreen(%ar)%Creset' --graph"
+    git config --global alias.recent "shortlog --since=yesterday"
+
+    git config --global alias.svnup "!sh -c 'git stash; git svn rebase; git stash pop'"
+    git config --global alias.svnci "!sh -c 'git stash; git svn dcommit; git stash pop'"
+
+    git config --global alias.unstage "reset HEAD --"
     git config --global alias.wtf "!sh -c 'git-wtf'"
     git config --global alias.publish-branch "!sh -c 'git-publish-branch'"
     git config --global alias.pb "!sh -c 'git-publish-branch'"
-
-    git config --global alias.last 'log -1 --relative-date --graph HEAD'
-    git config --global alias.last5 'log -5 --relative-date --graph HEAD'
-    git config --global alias.lg "log --pretty='%C(yellow)%h - %an - %ar%Cblue%d%Creset%n%s%n' --graph"
-    git config --global alias.lgs "log --pretty='%C(yellow)%h - %an - %ar%Cblue%d%Creset%n%s%n' --graph --stat"
-    git config --global alias.slog "log --pretty='%C(yellow)%h%Creset:%an -%Cblue%d%Creset %s %Cgreen(%ar)%Creset' --graph"
-    git config --global alias.slg "log --pretty='%C(yellow)%h%Creset:%an -%Cblue%d%Creset %s %Cgreen(%ar)%Creset' --graph"
-    git config --global alias.svnup "!sh -c 'git stash; git svn rebase; git stash pop'"
-    git config --global alias.svnci "!sh -c 'git stash; git svn dcommit; git stash pop'"
     git config --global alias.serve "!git daemon --reuseaddr --verbose  --base-path=. --export-all ./.git"
     git config --global alias.remote-prune "!git remote | xargs -n 1 git remote prune"
 
     git config --global color.ui "auto"
     git config --global core.excludesfile "${SCRIPT_PATH}/gitignore"
     git config --global core.autocrlf "input"
-    git config --global push.default "tracking"
+    git config --global push.default "current"
     git config --global branch.autosetupmerge "true"
+    git config --global branch.autosetuprebase "local"
     git config --global merge.conflictstyle "diff3"
     git config --global merge.stat true
     git config --global core.whitespace trailing-space
