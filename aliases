@@ -102,6 +102,11 @@ svn-rv-ci () {
         echo "'$1' is not a valid revision number"
     fi
 }
+
+svnulog () {
+    svn log -v $1 | sed -n '/\| $2 \|/,/-----\$/ p'
+}
+
 alias svnurl="svn info | grep URL | awk  -F': ' '{ print \$2 }'"
 alias svnver="change-svn-wc-format.py"
 
