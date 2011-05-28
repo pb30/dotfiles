@@ -36,6 +36,12 @@ else
   echo "ERROR: ~/.screenrc already exists, please remove then install again"
 fi
 
+if([ -h ~/.bashrc ] || [ ! -f  ~/.bashrc ]) then
+  ln -fs ${SCRIPT_PATH}/bashrc ~/.bashrc
+else
+  echo "ERROR: ~/.bashrc already exists, please remove then install again"
+fi
+
 ###################### LOCALRC
 if([ ! -f  ~/.localrc ]) then
     touch ~/.localrc
@@ -44,10 +50,6 @@ fi
 
 if([ -f  ~/.profile ]) then
     echo "NOTE: ~/.profile exists, any machine-specific info should go in ~/.localrc"
-fi
-
-if([ -f  ~/.bashrc ]) then
-    echo "NOTE: ~/.bashrc exists, any machine-specific info should go in ~/.localrc"
 fi
 
 ###################### GIT SETUP
