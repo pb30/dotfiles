@@ -22,6 +22,7 @@ alias install="sudo apt-get install"
 ###################### Gadgets
 alias ip="curl -s http://checkip.dyndns.com/ | sed 's/[^0-9\.]//g'"
 alias localip="ipconfig getifaddr en1"
+alias genpass="cat /dev/urandom | env LC_CTYPE=C tr -cd 'A-Za-z0-9' | head -c 30"
 alias webshare='python -c "import SimpleHTTPServer;SimpleHTTPServer.test()"' #Share current dir over localhost:8000
 
 extract () {
