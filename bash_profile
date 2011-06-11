@@ -20,6 +20,9 @@ export HISTSIZE=5000
 
 export ACK_OPTIONS="-i --sort-files --color --follow --group"
 
+# enable command and file completion after sudo
+complete -f -c sudo
+
 ###################### Redefining default params
 ######## Color
 if [ -x /usr/bin/dircolors ] ; then
