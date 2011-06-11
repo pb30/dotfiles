@@ -25,6 +25,15 @@ alias localip="ipconfig getifaddr en1"
 alias genpass="cat /dev/urandom | env LC_CTYPE=C tr -cd 'A-Za-z0-9' | head -c 30;echo ''"
 alias webshare='python -c "import SimpleHTTPServer;SimpleHTTPServer.test()"' #Share current dir over localhost:8000
 
+u2d () {
+    # Unix timestamp to date
+    if [[ $OSTYPE == 'darwin10.0' ]]; then
+        date -r $1
+    else
+        date -ud \"1970-01-01 + $1 seconds\"
+    fi
+}
+
 extract () {
     if [ -f $1 ] ; then
        case $1 in
