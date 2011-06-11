@@ -20,6 +20,8 @@ export HISTSIZE=5000
 
 export ACK_OPTIONS="-i --sort-files --color --follow --group"
 
+shopt -s checkwinsize    # check and update lines & cols after each cmd
+
 # enable command and file completion after sudo
 complete -f -c sudo
 
