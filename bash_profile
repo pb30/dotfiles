@@ -38,6 +38,11 @@ bind '"\M-w"':"\"\C-k\C-ahistory | grep '^ *[0-9]* *\C-e.'\C-m\""
 bind Space:magic-space # `svn diff !:2` inserts 2nd arg from previous 
 #bind '"\C-\t":menu-complete'
 
+###################### Mac Settings
+if [[ $OSTYPE == 'darwin10.0' ]]; then
+   defaults write com.apple.desktopservices DSDontWriteNetworkStores true
+fi
+
 ###################### Load external scripts
 if [ -f ${SCRIPT_PATH}/aliases ]; then
     source ${SCRIPT_PATH}/aliases
