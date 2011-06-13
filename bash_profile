@@ -41,7 +41,7 @@ bind Space:magic-space # `svn diff !:2` inserts 2nd arg from previous
 #bind '"\C-\t":menu-complete'
 
 ###################### Mac Settings
-if [[ $OSTYPE == 'darwin10.0' ]]; then
+if [[ $OSTYPE == darwin1* ]]; then
    defaults write com.apple.desktopservices DSDontWriteNetworkStores true
 fi
 
