@@ -42,6 +42,12 @@ else
   echo "ERROR: ~/.bashrc already exists, please remove then install again"
 fi
 
+if([ -h ~/.colordiffrc ] || [ ! -f  ~/.colordiffrc ]) then
+  ln -fs ${SCRIPT_PATH}/colordiffrc ~/.colordiffrc
+else
+  echo "ERROR: ~/.colordiffrc already exists, please remove then install again"
+fi
+
 ###################### LOCALRC
 if([ ! -f  ~/.localrc ]) then
     touch ~/.localrc
