@@ -116,6 +116,10 @@ svnulog () {
     svn log -v $1 | sed -n '/\| $2 \|/,/-----\$/ p'
 }
 
+svnstf () {
+	svn status | grep "^$1" | awk '{ print $2 }'
+}
+alias svncf="svnstf C"
 alias svnurl="svn info | grep URL | awk  -F': ' '{ print \$2 }'"
 alias svnver="change-svn-wc-format.py"
 
