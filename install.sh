@@ -48,6 +48,18 @@ else
   echo "ERROR: ~/.colordiffrc already exists, please remove then install again"
 fi
 
+if([ -h ~/.vimrc ] || [ ! -f  ~/.vimrc ]) then
+  ln -fs ${SCRIPT_PATH}/colordiffrc ~/.vimrc
+else
+  echo "ERROR: ~/.vimrc already exists, please remove then install again"
+fi
+
+if([ -h ~/.vim ] || [ ! -d  ~/.vim ]) then
+  ln -fs ${SCRIPT_PATH}/vim ~/.vim
+else
+  echo "ERROR: ~/.vim already exists, please remove then install again"
+fi
+
 ###################### LOCALRC
 if([ ! -f  ~/.localrc ]) then
     touch ~/.localrc
