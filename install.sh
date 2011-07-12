@@ -49,7 +49,7 @@ else
 fi
 
 if([ -h ~/.vimrc ] || [ ! -f  ~/.vimrc ]) then
-  ln -fs ${SCRIPT_PATH}/colordiffrc ~/.vimrc
+  ln -fs ${SCRIPT_PATH}/vimrc ~/.vimrc
 else
   echo "ERROR: ~/.vimrc already exists, please remove then install again"
 fi
