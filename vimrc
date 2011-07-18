@@ -1,5 +1,5 @@
-colorscheme murphy
-set background=dark
+colorscheme default
+set background=light
 syntax on " Enable syntax highlighting
 highlight htmlString ctermfg=white
 highlight phpStringSingle ctermfg=white
@@ -7,23 +7,25 @@ highlight phpStringDouble ctermfg=white
 highlight phpFunctions ctermfg=green
 highlight phpComment ctermfg=darkgray
 
-set showmode " Always display current mode
+set showmode      " Always display current mode
 
-set smartindent   " Indent after {
-set autoindent    " Match previous line indentation
-set expandtab     " Expand tab to spaces
-set tabstop=4     " 4 spaces = tab
-set softtabstop=4 " 4 spaces = tab
-set shiftwidth=4  " 4 spaces = tab
+                  " Indentation
+set smartindent   "   Indent after {
+set autoindent    "   Match previous line indentation
+set expandtab     "   Expand tab to spaces
+set tabstop=4     "   4 spaces = tab
+set softtabstop=4 "   4 spaces = tab
+set shiftwidth=4  "   4 spaces = tab
 
-set ignorecase " Set search to case-insensitive
-set hlsearch   " Highlight search results
-set incsearch  " Start highlighting matches when typing in search
+                  " Search
+set ignorecase    "   Set search to case-insensitive
+set hlsearch      "   Highlight search results
+set incsearch     "   Start highlighting matches when typing in search
 
-set number     " Enable line numbering
+set number        " Enable line numbering
 set showmatch
 
-set autoread " If file has changed outside vim, and not inside, reload
+set autoread      " If file has changed outside vim, and not inside, reload
 
 highlight LineNr ctermbg=black ctermfg=darkblue
 
