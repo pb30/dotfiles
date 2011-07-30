@@ -1,11 +1,6 @@
 colorscheme default
 set background=light
 syntax on " Enable syntax highlighting
-highlight htmlString ctermfg=white
-highlight phpStringSingle ctermfg=white
-highlight phpStringDouble ctermfg=white
-highlight phpFunctions ctermfg=green
-highlight phpComment ctermfg=darkgray
 
 set showmode      " Always display current mode
 
@@ -27,16 +22,24 @@ set showmatch
 
 set autoread      " If file has changed outside vim, and not inside, reload
 
+set nobackup      " Disable backups
+set nowritebackup
+set noswapfile
+
 highlight LineNr ctermbg=black ctermfg=darkblue
+highlight htmlString ctermfg=white
+highlight phpStringSingle ctermfg=white
+highlight phpStringDouble ctermfg=white
+highlight phpFunctions ctermfg=green
+highlight phpComment ctermfg=darkgray
+" Highlight extra whitespace
+highlight ExtraWhitespace ctermbg=darkgreen
+match ExtraWhitespace /\(\s\+$\|\t\)/
 
 " Enter in normal mode will insert empty line
 nmap <CR> _i<Enter><Esc>
 " Space in normal mode will insert space after cursor
 nnoremap <Space> i<Space><Esc>
-
-" Highlight extra whitespace
-highlight ExtraWhitespace ctermbg=darkgreen
-match ExtraWhitespace /\(\s\+$\|\t\)/
 
 " PHP syntax checking with :make
 set makeprg=php\ -l\ %
