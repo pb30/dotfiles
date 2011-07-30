@@ -1,4 +1,4 @@
-colorscheme default
+colorscheme customdante
 set background=light
 syntax on " Enable syntax highlighting
 
@@ -26,12 +26,7 @@ set nobackup      " Disable backups
 set nowritebackup
 set noswapfile
 
-highlight LineNr ctermbg=black ctermfg=darkblue
-highlight htmlString ctermfg=white
-highlight phpStringSingle ctermfg=white
-highlight phpStringDouble ctermfg=white
-highlight phpFunctions ctermfg=green
-highlight phpComment ctermfg=darkgray
+
 " Highlight extra whitespace
 highlight ExtraWhitespace ctermbg=darkgreen
 match ExtraWhitespace /\(\s\+$\|\t\)/
@@ -71,3 +66,8 @@ map ,< :s/^\(.*\)$/<!-- \1 -->/<CR>:nohlsearch<CR>
 
 " w!! to save file as sudo, if you forgot to do sudo vim
 cmap w!! %!sudo tee > /dev/null %
+
+
+" Plugins
+"   \hlt - will reveal a linked list of highlighting from the top-level down to the bottom level
+"
