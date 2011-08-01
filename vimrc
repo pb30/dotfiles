@@ -6,13 +6,13 @@ filetype off
 set rtp+=~/.vim/bundle/vundle/
 call vundle#rc()
 
-Bundle 'gmarik/vundle'
-Bundle 'rstacruz/sparkup', {'rtp': 'vim/'}
-Bundle 'scrooloose/nerdtree'
-Bundle 'spf13/PIV'
-Bundle 'HTML-AutoCloseTag'
-Bundle 'Raimondi/delimitMate'
-Bundle 'msanders/snipmate.vim'
+Bundle 'git://github.com/gmarik/vundle.git'
+Bundle 'git://github.com/rstacruz/sparkup.git', {'rtp': 'vim/'}
+Bundle 'git://github.com/scrooloose/nerdtree.git'
+Bundle 'git://github.com/spf13/PIV.git'
+Bundle 'git://github.com/vim-scripts/HTML-AutoCloseTag.git'
+Bundle 'git://github.com/Raimondi/delimitMate.git'
+Bundle 'git://github.com/msanders/snipmate.vim.git'
 "Bundle 'ervandew/supertab'
 
 filetype plugin indent on
