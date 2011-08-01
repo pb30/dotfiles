@@ -11,6 +11,8 @@ alias df="df -h"
 alias h="history"
 alias g="git"
 
+alias vimupdate="vim +BundleInstall! +BundleClean +q"
+
 alias empty="cat /dev/null > "
 
 ## Server (Debian) Specific
