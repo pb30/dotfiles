@@ -114,37 +114,41 @@ if which git &> /dev/null; then
     git config --global merge.stat true
     git config --global core.whitespace trailing-space
 
-    echo "Current Git user settings:"
-    echo "user name/email: `git config --global --get user.name` / `git config --global --get user.email`"
-    echo "gitub user/token: `git config --global --get github.user` / `git config --global --get github.token`"
-    read -p "Change Git info? [n/y] " -e gitchange
-    if [ "$gitchange" == "y" ]; then
+    if [ "$1" != '-q' ]; then
+        echo "Current Git user settings:"
+        echo "user name/email: `git config --global --get user.name` / `git config --global --get user.email`"
+        echo "gitub user/token: `git config --global --get github.user` / `git config --global --get github.token`"
+        read -p "Change Git info? [n/y] " -e gitchange
+        if [ "$gitchange" == "y" ]; then
 
-        read -p "Git: Enter user.name [`git config --global --get user.name`]: " -e input_gitname
-        if [ -n "$input_gitname" ]; then
-          git config --global user.name "${input_gitname}"
+            read -p "Git: Enter user.name [`git config --global --get user.name`]: " -e input_gitname
+            if [ -n "$input_gitname" ]; then
+              git config --global user.name "${input_gitname}"
+            fi
+
+            read -p "Git: Enter user.email [`git config --global --get user.email`]: " -e input_gitemail
+            if [ -n "$input_gitemail" ]; then
+              git config --global user.email "${input_gitemail}"
+            fi
+
+            read -p "Git: Enter github.user [`git config --global --get github.user`]: " -e input_githubuser
+            if [ -n "$input_githubuser" ]; then
+              git config --global github.user "${input_githubuser}"
+            fi
+
+            read -p "Git: Enter github.token [`git config --global --get github.token`]: " -e input_githubtoken
+            if [ -n "$input_githubtoken" ]; then
+              git config --global github.token "${input_githubtoken}"
+            fi
+
         fi
-
-        read -p "Git: Enter user.email [`git config --global --get user.email`]: " -e input_gitemail
-        if [ -n "$input_gitemail" ]; then
-          git config --global user.email "${input_gitemail}"
-        fi
-
-        read -p "Git: Enter github.user [`git config --global --get github.user`]: " -e input_githubuser
-        if [ -n "$input_githubuser" ]; then
-          git config --global github.user "${input_githubuser}"
-        fi
-
-        read -p "Git: Enter github.token [`git config --global --get github.token`]: " -e input_githubtoken
-        if [ -n "$input_githubtoken" ]; then
-          git config --global github.token "${input_githubtoken}"
-        fi
-
+        echo ""
     fi
-    echo ""
 else 
     echo "NOTE: Git not installed, skipping Git setup"
     echo ""
 fi
 
-echo "Finished! To reload settings, run: source ~/.bash_profile"
+if [ "$1" != '-q' ]; then 
+    echo "Finished! To reload settings, run: source ~/.bash_profile"
+fi

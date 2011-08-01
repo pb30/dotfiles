@@ -20,7 +20,7 @@ if [ $1 ] ; then
         rsync -arvzc --delete --exclude=.* ${SCRIPT_PATH}/. $@:~/.dotfiles
         
     fi
-    ssh $@ "~/.dotfiles/install.sh;"
+    ssh $@ "~/.dotfiles/install.sh -q;"
 else
     echo "'$1' is not a valid server! Usage: dotsync user@hostname"
 fi
