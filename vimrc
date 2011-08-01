@@ -9,6 +9,11 @@ call vundle#rc()
 Bundle 'gmarik/vundle'
 Bundle 'rstacruz/sparkup', {'rtp': 'vim/'}
 Bundle 'scrooloose/nerdtree'
+Bundle 'spf13/PIV'
+Bundle 'HTML-AutoCloseTag'
+Bundle 'Raimondi/delimitMate'
+Bundle 'msanders/snipmate.vim'
+"Bundle 'ervandew/supertab'
 
 filetype plugin indent on
 
@@ -54,10 +59,9 @@ set errorformat=%m\ in\ %f\ on\ line\ %l
 filetype plugin on
 set ofu=syntaxcomplete#Complete
 
-" Autocomplete HTML tag on <// 
-inoremap <lt>// </<C-X><C-O>
-inoremap {      { }<Left><Left>
-inoremap {<CR>  {<CR>}<Esc>O
+" Autocomplete braces/quotes
+inoremap {      {}<Left>
+inoremap {<CR>  {<CR>}<Esc>O<Space><Space><Space><Space>
 inoremap {{     {
 inoremap {}     {}
 inoremap /*          /**/<Left><Left>
@@ -65,7 +69,8 @@ inoremap /*<Space>   /*<Space><Space>*/<Left><Left><Left>
 inoremap /*<CR>      /*<CR>*/<Esc>O
 inoremap =" =""<Left>
 inoremap =' ='' <Left>
-inoremap <lt>?php <?php ?><Left><Left><Left>
+inoremap <lt>?php <?php  ?><Left><Left><Left><Left>
+inoremap <lt>?php<CR> <?php<CR>?><Esc>O<Space><Space><Space><Space>
 
 " \c to display underline the current line
 nnoremap <Leader>c :set cursorline! <CR>
