@@ -13,6 +13,7 @@ Bundle 'git://github.com/spf13/PIV.git'
 Bundle 'git://github.com/vim-scripts/HTML-AutoCloseTag.git'
 Bundle 'git://github.com/Raimondi/delimitMate.git'
 Bundle 'git://github.com/msanders/snipmate.vim.git'
+Bundle 'git://github.com/scrooloose/nerdcommenter.git'
 "Bundle 'ervandew/supertab'
 
 filetype plugin indent on
