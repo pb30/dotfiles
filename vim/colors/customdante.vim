@@ -96,3 +96,5 @@ hi link htmlEndTag htmlTag
 hi link phpMemberSelector phpMethodsVar
 hi link phpType phpConditional
 hi link phpRepeat phpConditional
+
+hi Pmenu ctermfg=black ctermbg=lightgray
