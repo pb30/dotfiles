@@ -2,6 +2,16 @@ colorscheme customdante
 set background=light
 syntax on " Enable syntax highlighting
 
+filetype off
+set rtp+=~/.vim/bundle/vundle/
+call vundle#rc()
+
+Bundle 'gmarik/vundle'
+Bundle 'rstacruz/sparkup', {'rtp': 'vim/'}
+Bundle 'scrooloose/nerdtree'
+
+filetype plugin indent on
+
 set showmode      " Always display current mode
 
                   " Indentation
