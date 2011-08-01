@@ -56,6 +56,10 @@ set makeprg=php\ -l\ %
 autocmd QuickFixCmdPre make w
 set errorformat=%m\ in\ %f\ on\ line\ %l
 
+" Disable PIV's PHP code folding
+set foldlevelstart=99
+let g:DisableAutoPHPFolding = 1
+
 filetype plugin on
 set ofu=syntaxcomplete#Complete
 
