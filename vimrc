@@ -61,6 +61,13 @@ set nowritebackup   " Disable backups when overwriting a file
 set noswapfile
 
 
+"""""""""""""""""" Windows
+map <C-J> 10<C-W>_<C-W>j
+map <C-K> 10<C-W>_<C-W>k
+map <C-L> 10<C-W>_<C-W>l
+map <C-H> 10<C-W>_<C-W>h
+
+
 """""""""""""""""" Autocomplete
 inoremap {      {}<Left>
 inoremap {<CR>  {<CR>}<Esc>O<Space><Space><Space><Space>
@@ -104,6 +111,8 @@ inoremap <lt>?php<CR> <?php<CR>?><Esc>O<Space><Space><Space><Space>
     autocmd QuickFixCmdPre make w
     set errorformat=%m\ in\ %f\ on\ line\ %l
 " Disable PIV's PHP code folding on open, enable with ,f
+    set foldlevel=99
+    set foldlevelstart=99
     let g:DisableAutoPHPFolding = 1
     nnoremap <leader>f :EnablePHPFolds<CR>:set foldlevel=1<CR>
 
