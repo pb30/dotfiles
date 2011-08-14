@@ -99,9 +99,9 @@ inoremap <lt>?php<CR> <?php<CR>?><Esc>O<Space><Space><Space><Space>
     set makeprg=php\ -l\ %
     autocmd QuickFixCmdPre make w
     set errorformat=%m\ in\ %f\ on\ line\ %l
-" Disable PIV's PHP code folding
-    set foldlevelstart=99
+" Disable PIV's PHP code folding on open, enable with ,f
     let g:DisableAutoPHPFolding = 1
+    nnoremap <leader>f :EnablePHPFolds<CR>:set foldlevel=1<CR>
 
 
 """""""""""""""""" Misc
