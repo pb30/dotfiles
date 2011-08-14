@@ -1,5 +1,6 @@
-syntax on " Enable syntax highlighting
-set background=light
+set t_Co=256 " Enable 256 colors
+syntax on    " Enable syntax highlighting
+set background=dark
 colorscheme customdante
 
 """"""""""""""""""" Vundle
