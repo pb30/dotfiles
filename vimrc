@@ -87,7 +87,7 @@ inoremap <lt>?php<CR> <?php<CR>?><Esc>O<Space><Space><Space><Space>
 "One less key to hit when trying to save
     nnoremap ; :
 " Search current directory with ack using ,a
-    nnoremap <leader>a :Ack
+    nnoremap <leader>a :Ack<space>
 " Reselect pasted text (to do indentation, etc) with ,v
     nnoremap <leader>v V`]
 " Toggle line numbering
