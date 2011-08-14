@@ -18,6 +18,7 @@ Bundle 'git://github.com/scrooloose/nerdcommenter.git'
 Bundle 'git://github.com/mileszs/ack.vim.git'
 Bundle 'git://github.com/kergoth/vim-HiLinkTrace.git'
 Bundle 'git://github.com/fholgado/minibufexpl.vim.git'
+Bundle 'git://github.com/tpope/vim-surround.git'
 
 filetype plugin indent on
 
