@@ -16,6 +16,7 @@ Bundle 'git://github.com/Raimondi/delimitMate.git'
 Bundle 'git://github.com/msanders/snipmate.vim.git'
 Bundle 'git://github.com/scrooloose/nerdcommenter.git'
 Bundle 'git://github.com/mileszs/ack.vim.git'
+Bundle 'git://github.com/kergoth/vim-HiLinkTrace.git'
 
 filetype plugin indent on
 
