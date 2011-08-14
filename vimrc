@@ -111,6 +111,8 @@ inoremap <lt>?php<CR> <?php<CR>?><Esc>O<Space><Space><Space><Space>
 """""""""""""""""" Plugins
 " MiniBufExplorer
 map <Leader>b :MiniBufExplorer<cr>
+" NERDTree
+map <Leader>t :NERDTree<cr>
 
 
 """""""""""""""""" Misc
