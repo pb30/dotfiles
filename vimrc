@@ -19,6 +19,7 @@ Bundle 'git://github.com/mileszs/ack.vim.git'
 Bundle 'git://github.com/kergoth/vim-HiLinkTrace.git'
 Bundle 'git://github.com/fholgado/minibufexpl.vim.git'
 Bundle 'git://github.com/tpope/vim-surround.git'
+Bundle 'git://github.com/vim-scripts/vcscommand.vim.git'
 
 filetype plugin indent on
 
