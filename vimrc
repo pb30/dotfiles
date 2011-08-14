@@ -17,6 +17,7 @@ Bundle 'git://github.com/msanders/snipmate.vim.git'
 Bundle 'git://github.com/scrooloose/nerdcommenter.git'
 Bundle 'git://github.com/mileszs/ack.vim.git'
 Bundle 'git://github.com/kergoth/vim-HiLinkTrace.git'
+Bundle 'git://github.com/fholgado/minibufexpl.vim.git'
 
 filetype plugin indent on
 
@@ -103,6 +104,11 @@ inoremap <lt>?php<CR> <?php<CR>?><Esc>O<Space><Space><Space><Space>
 " Disable PIV's PHP code folding on open, enable with ,f
     let g:DisableAutoPHPFolding = 1
     nnoremap <leader>f :EnablePHPFolds<CR>:set foldlevel=1<CR>
+
+
+"""""""""""""""""" Plugins
+" MiniBufExplorer
+map <Leader>b :MiniBufExplorer<cr>
 
 
 """""""""""""""""" Misc
