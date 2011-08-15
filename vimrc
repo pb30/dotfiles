@@ -27,13 +27,13 @@ filetype plugin indent on
 
 """"""""""""""""""" Basic Options
 set showmode        " Always display current mode
-set relativenumber  " Display line numbers relative to cursor
 set nocompatible    " Disable Vi defaults
 set encoding=utf-8  " Encoding
 set modelines=0     " Disable modelines in files
 set showmatch       " Briefly highlight matching bracket when typing
 set wildmenu        " Show list/menu when tab completing commands
-"set number         " Enable line numbering
+set number         " Enable line numbering
+"set relativenumber  " Display line numbers relative to cursor
 let mapleader = "," " Remap leader from \
 set backspace=indent,eol,start
 
@@ -103,7 +103,7 @@ inoremap <lt>?php<CR> <?php<CR>?><Esc>O<Space><Space><Space><Space>
 " Reselect pasted text (to do indentation, etc) with ,v
     nnoremap <leader>v V`]
 " Toggle line numbering
-    nnoremap <leader>n :set invrelativenumber<CR>
+    nnoremap <leader>n :set invnumber<CR>
 
 
 """""""""""""""""" PHP
