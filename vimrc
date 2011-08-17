@@ -1,7 +1,13 @@
 set t_Co=256 " Enable 256 colors
 syntax on    " Enable syntax highlighting
 set background=dark
-colorscheme customdante
+let g:solarized_termtrans=1
+let g:solarized_termcolors=256
+let g:solarized_contrast="high"
+let g:solarized_visibility="high"
+colorscheme solarized
+hi LineNr ctermbg=black
+
 
 """"""""""""""""""" Vundle
 filetype off
