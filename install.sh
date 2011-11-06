@@ -89,9 +89,9 @@ if which git &> /dev/null; then
 
     git config --global alias.last '!git lgs -1 --relative-date --graph HEAD'
     git config --global alias.last5 '!git lgs -5 --relative-date --graph HEAD'
-    git config --global alias.lg "log --pretty='%C(yellow)%h - %C(blue)%an%Creset - %ar%C(red)%d%Creset%n%s%n' --graph"
-    git config --global alias.lgs "log --pretty='%C(yellow)%h - %C(blue)%an%Creset - %ar%C(red)%d%Creset%n%s%n' --graph --stat"
-    git config --global alias.slg "log --pretty='%C(yellow)%h:%C(blue)%an%Creset -%C(red)%d%Creset %s %Cgreen(%ar)%Creset' --graph"
+    git config --global alias.lg "log --pretty='%C(yellow)%h - %C(blue)%an <%ae>%Creset - %ar%C(red)%d%Creset%n%s%n' --graph"
+    git config --global alias.lgs "log --pretty='%C(yellow)%h - %C(blue)%an <%ae>%Creset - %ar%C(red)%d%Creset%n%s%n' --graph --stat"
+    git config --global alias.slg "log --pretty='%C(yellow)%h:%C(blue)%an <%ae>%Creset -%C(red)%d%Creset %s %Cgreen(%ar)%Creset' --graph"
     git config --global alias.recent "shortlog --since=yesterday"
 
     git config --global alias.svnup "!sh -c 'git stash; git svn rebase; git stash pop'"
