@@ -20,6 +20,14 @@ alias restartapache="sudo /etc/init.d/apache2 restart"
 alias restartmysql="sudo /etc/init.d/mysql restart"
 alias install="sudo apt-get install"
 
+gitempty () {
+	mkdir -p $1
+	echo "# Ignore everything in this directory" > $1/.gitignore
+	echo "*" >> $1/.gitignore
+	echo "# Except this file" >> $1/.gitignore
+	echo "!.gitignore" >> $1/.gitignore
+	git add $1/.gitignore
+}
 
 ###################### Gadgets
 alias ip="curl -s http://checkip.dyndns.com/ | sed 's/[^0-9\.]//g'"
