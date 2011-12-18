@@ -107,7 +107,7 @@ if which git &> /dev/null; then
     git config --global color.ui "auto"
     git config --global core.excludesfile "${SCRIPT_PATH}/gitignore"
     git config --global core.autocrlf "input"
-    git config --global push.default "upstream"
+    git config --global push.default "tracking"
     git config --global branch.autosetuprebase "always"
     git config --global merge.conflictstyle "diff3"
     git config --global merge.stat true
