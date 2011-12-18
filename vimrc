@@ -39,10 +39,13 @@ set encoding=utf-8  " Encoding
 set modelines=0     " Disable modelines in files
 set showmatch       " Briefly highlight matching bracket when typing
 set wildmenu        " Show list/menu when tab completing commands
-set number         " Enable line numbering
-"set relativenumber  " Display line numbers relative to cursor
 let mapleader = "," " Remap leader from \
 set backspace=indent,eol,start
+if v:version >= 703
+	set relativenumber  " Display line numbers relative to cursor
+else
+	set number         " Enable line numbering
+endif
 
 
 """"""""""""""""""" Indentation
@@ -69,6 +72,22 @@ set nowritebackup   " Disable backups when overwriting a file
 set noswapfile
 
 
+"""""""""""""""""" Statusline
+set statusline=%t       " Tail of the filename
+set statusline+=[%{strlen(&fenc)?&fenc:'none'}, " File encoding
+set statusline+=%{&ff}] " File format
+set statusline+=%h      " Help file flag
+set statusline+=%m      " Modified flag
+set statusline+=%r      " Read only flag
+set statusline+=%y      " Filetype
+set statusline+=%=      " Left/right separator
+set statusline+=%c,     " Cursor column
+set statusline+=%l/%L   " Cursor line/total lines
+set statusline+=\ %P    " Percent through file
+
+set laststatus=2        " Always show statusline
+
+
 """""""""""""""""" Windows
 map <C-J> 10<C-W>_<C-W>j
 map <C-K> 10<C-W>_<C-W>k
@@ -91,6 +110,8 @@ inoremap <lt>?php<CR> <?php<CR>?><Esc>O<Space><Space><Space><Space>
 
 
 """""""""""""""""" Key Commands
+" Yank to end of line
+    map Y yy
 " Enter in normal mode will insert empty line
     nmap <CR> _i<Enter><Esc>
 " Space in normal mode will insert space after cursor
@@ -110,7 +131,17 @@ inoremap <lt>?php<CR> <?php<CR>?><Esc>O<Space><Space><Space><Space>
 " Reselect pasted text (to do indentation, etc) with ,v
     nnoremap <leader>v V`]
 " Toggle line numbering
-    nnoremap <leader>n :set invnumber<CR>
+	if v:version >= 703
+		nnoremap <leader>n :set invrelativenumber<CR>
+	else
+		nnoremap <leader>n :set invnumber<CR>
+	endif
+" Search/Replace
+    nnoremap <leader>s :%s//<left>
+" Stupid help menuu right next to the ESC key...
+    inoremap <F1> <ESC>
+    nnoremap <F1> <ESC>
+    vnoremap <F1> <ESC>
 
 
 """""""""""""""""" PHP
@@ -134,9 +165,8 @@ map <Leader>t :NERDTree<cr>
 
 """""""""""""""""" Misc
 set ofu=syntaxcomplete#Complete
+" Highlight VCS conflict markers
+"    match ErrorMsg /^\(<\|=\|>\|\\|\)\{7\}\([^=].\+\)\?$/
 " Highlight extra whitespace
     highlight ExtraWhitespace ctermbg=darkgreen
     match ExtraWhitespace /\(\s\+$\|\t\)/
-
-
-
