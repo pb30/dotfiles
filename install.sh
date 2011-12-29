@@ -103,6 +103,9 @@ if which git &> /dev/null; then
     git config --global alias.pb "!sh -c 'git-publish-branch'"
     git config --global alias.serve "!git daemon --reuseaddr --verbose  --base-path=. --export-all ./.git"
     git config --global alias.remote-prune "!git remote | xargs -n 1 git remote prune"
+    
+    git config --global alias.whattag "name-rev --name-only"
+    git config --global alias.whatbranch "branch -a --contains"
 
     git config --global color.ui "auto"
     git config --global core.excludesfile "${SCRIPT_PATH}/gitignore"
