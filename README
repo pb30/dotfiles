@@ -1,1 +1,2 @@
-Run install.sh
+Fetch submodules: git submodule update --init
+Run: install.sh
