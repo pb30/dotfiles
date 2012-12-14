@@ -3,7 +3,7 @@ alias ..='cd ..'
 alias ...='cd ../..'
 alias ~='cd ~'
 
-alias ls="ls -hF"
+alias ls="ls -hF --color"
 alias ll="ls -l"
 alias la="ll -a"
 
