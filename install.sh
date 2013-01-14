@@ -114,6 +114,7 @@ if which git &> /dev/null; then
     git config --global branch.autosetuprebase "always"
     git config --global merge.conflictstyle "diff3"
     git config --global merge.stat true
+    git config --global merge.log true
     git config --global core.whitespace trailing-space
     
     if [[ $OSTYPE == darwin1* ]] && which git-credential-osxkeychain &> /dev/null; then
