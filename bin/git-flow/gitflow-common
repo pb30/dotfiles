@@ -45,7 +45,7 @@ warn() { echo "$@" >&2; }
 die() { warn "$@"; exit 1; }
 
 escape() {
-	echo "$1" | sed 's/\([\.\+\$\*]\)/\\\1/g'
+	echo "$1" | sed 's/\([\.\$\*]\)/\\\1/g'
 }
 
 # set logic
@@ -69,6 +69,14 @@ noflag() { local FLAG; eval FLAG='$FLAGS_'$1; [ $FLAG -ne $FLAGS_TRUE ]; }
 #
 # Git specific common functionality
 #
+
+git_do() {
+  # equivalent to git, used to indicate actions that make modifications
+  if flag show_commands; then
+    echo "git $@" >&2
+  fi
+  git "$@"
+}
 
 git_local_branches() { git branch --no-color | sed 's/^[* ] //'; }
 git_remote_branches() { git branch -r --no-color | sed 's/^[* ] //'; }
@@ -95,6 +103,10 @@ git_repo_is_headless() {
 
 git_local_branch_exists() {
 	has $1 $(git_local_branches)
+}
+
+git_remote_branch_exists() {
+	has $1 $(git_remote_branches)
 }
 
 git_branch_exists() {
