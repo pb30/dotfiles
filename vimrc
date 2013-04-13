@@ -7,6 +7,7 @@ let g:solarized_contrast="high"
 let g:solarized_visibility="high"
 colorscheme solarized
 hi LineNr ctermbg=black
+hi SignColumn ctermbg=black
 
 
 """"""""""""""""""" Vundle
@@ -23,11 +24,14 @@ Bundle 'git://github.com/Raimondi/delimitMate.git'
 Bundle 'git://github.com/msanders/snipmate.vim.git'
 Bundle 'git://github.com/scrooloose/nerdcommenter.git'
 Bundle 'git://github.com/mileszs/ack.vim.git'
-Bundle 'git://github.com/kergoth/vim-HiLinkTrace.git'
+Bundle 'git://github.com/gerw/vim-HiLinkTrace.git'
 Bundle 'git://github.com/fholgado/minibufexpl.vim.git'
 Bundle 'git://github.com/tpope/vim-surround.git'
 Bundle 'git://github.com/vim-scripts/vcscommand.vim.git'
 Bundle 'git://github.com/vim-scripts/matchit.zip.git'
+Bundle 'git://github.com/airblade/vim-gitgutter.git'
+Bundle 'git://github.com/scrooloose/syntastic.git'
+Bundle 'git://github.com/kien/ctrlp.vim.git'
 
 filetype plugin indent on
 
@@ -161,7 +165,11 @@ inoremap <lt>?php<CR> <?php<CR>?><Esc>O<Space><Space><Space><Space>
 map <Leader>b :MiniBufExplorer<cr>
 " NERDTree
 map <Leader>t :NERDTree<cr>
-
+" gitgutter (next/prev changed hunk)
+nmap <silent> ]h :<C-U>execute v:count1 . "GitGutterNextHunk"<CR>
+nmap <silent> [h :<C-U>execute v:count1 . "GitGutterPrevHunk"<CR>
+" CtrlP
+map <Leader>p :CtrlP<cr>
 
 """""""""""""""""" Misc
 set ofu=syntaxcomplete#Complete
