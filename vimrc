@@ -132,8 +132,8 @@ inoremap <lt>?php<CR> <?php<CR>?><Esc>O<Space><Space><Space><Space>
     nnoremap ; :
 " Search current directory with ack using ,a
     nnoremap <leader>a :Ack<space>
-" Reselect pasted text (to do indentation, etc) with ,v
-    nnoremap <leader>v V`]
+" Toggle paste mode to prevent vim reindenting code
+    nnoremap <leader>v :set invpaste<CR>
 " Toggle line numbering
 	if v:version >= 703
 		nnoremap <leader>n :set invrelativenumber<CR>
@@ -142,7 +142,7 @@ inoremap <lt>?php<CR> <?php<CR>?><Esc>O<Space><Space><Space><Space>
 	endif
 " Search/Replace
     nnoremap <leader>s :%s//<left>
-" Stupid help menuu right next to the ESC key...
+" Stupid help menu right next to the ESC key...
     inoremap <F1> <ESC>
     nnoremap <F1> <ESC>
     vnoremap <F1> <ESC>
