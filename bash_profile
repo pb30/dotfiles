@@ -68,7 +68,10 @@ if [ -f ~/.localrc ]; then
     source ~/.localrc
 fi
 
-source ${SCRIPT_PATH}/z.sh
+#source ${SCRIPT_PATH}/z.sh
+source ${SCRIPT_PATH}/fasd/fasd
+eval "$(fasd --init auto)"
+alias v="fasd -e vim"
 
 ######################  PATH + Private bin
 if [ -d ${SCRIPT_PATH}/bin ] ; then
