@@ -33,6 +33,9 @@ if [ -x /usr/bin/dircolors ] ; then
    export GREP_OPTIONS='--color=auto'
 fi
 
+######## Use some nicer colors
+export LSCOLORS="ExGxBxDxCxEgEdxbxgxcxd"
+
 ###################### Key control
 bind '"\e[A"':history-search-backward
 bind '"\e[B"':history-search-forward
