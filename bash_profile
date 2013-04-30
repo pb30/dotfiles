@@ -34,7 +34,7 @@ if [ -x /usr/bin/dircolors ] ; then
 fi
 
 ######## Use some nicer colors
-export LSCOLORS="ExGxBxDxCxEgEdxbxgxcxd"
+export LSCOLORS="ExGxBxDxCxEgEdxbxgacad"
 
 ###################### Key control
 bind '"\e[A"':history-search-backward
