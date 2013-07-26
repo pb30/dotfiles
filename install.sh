@@ -1,3 +1,41 @@
+#!/bin/bash
+
+# Lets set our defaults
+REQUIRE_INPUT=true
+OVERWRITE=false
+declare -a symlinks=('bash_profile' 'inputrc' 'nanorc' 'screenrc' 'bashrc' 'colordiffrc' 'vimrc')
+
+usage()
+{
+cat << EOF
+usage: $0 options
+
+OPTIONS:
+  -h Show this message
+  -q Quiet - no user interaction
+  -o Overwrite - Overwrite any created files
+EOF
+}
+
+while getopts "hqo" opt; do
+    case $opt in
+        h)
+            usage
+            exit 1
+            ;;
+        q)
+            REQUIRE_INPUT=false
+            ;;
+        o)
+            OVERWRITE=true
+            ;;
+        \?)
+            usage
+            exit
+            ;;
+    esac
+done
+
 SCRIPT_PATH="${BASH_SOURCE[0]}";
 if([ -h "${SCRIPT_PATH}" ]) then
   while([ -h "${SCRIPT_PATH}" ]) do SCRIPT_PATH=`readlink "${SCRIPT_PATH}"`; done
@@ -11,50 +49,16 @@ echo "Installing dotfiles from ${SCRIPT_PATH}"
 echo ""
 
 ###################### CREATE SYMLINKS
+for LINK in "${symlinks[@]}"
+do
+    if($OVERWRITE || [ -h ~/.${LINK} ] || [ ! -f ~/.${LINK} ]) then
+       ln -fs ${SCRIPT_PATH}/${LINK} ~/.${LINK}
+    else
+       echo "ERROR: ~/.$LINK already exists, please remove then install again"
+    fi
+done
 
-if([ -h ~/.bash_profile ] || [ ! -f  ~/.bash_profile ]) then
-  ln -fs ${SCRIPT_PATH}/bash_profile ~/.bash_profile
-else
-  echo "ERROR: ~/.bash_profile already exists, please remove then install again"
-fi
-
-if([ -h ~/.inputrc ] || [ ! -f  ~/.inputrc ]) then
-  ln -fs ${SCRIPT_PATH}/inputrc ~/.inputrc
-else
-  echo "ERROR: ~/.inputrc already exists, please remove then install again"
-fi
-
-if([ -h ~/.nanorc ] || [ ! -f  ~/.nanorc ]) then
-  ln -fs ${SCRIPT_PATH}/nanorc ~/.nanorc
-else
-  echo "ERROR: ~/.nanorc already exists, please remove then install again"
-fi
-
-if([ -h ~/.screenrc ] || [ ! -f  ~/.screenrc ]) then
-  ln -fs ${SCRIPT_PATH}/screenrc ~/.screenrc
-else
-  echo "ERROR: ~/.screenrc already exists, please remove then install again"
-fi
-
-if([ -h ~/.bashrc ] || [ ! -f  ~/.bashrc ]) then
-  ln -fs ${SCRIPT_PATH}/bashrc ~/.bashrc
-else
-  echo "ERROR: ~/.bashrc already exists, please remove then install again"
-fi
-
-if([ -h ~/.colordiffrc ] || [ ! -f  ~/.colordiffrc ]) then
-  ln -fs ${SCRIPT_PATH}/colordiffrc ~/.colordiffrc
-else
-  echo "ERROR: ~/.colordiffrc already exists, please remove then install again"
-fi
-
-if([ -h ~/.vimrc ] || [ ! -f  ~/.vimrc ]) then
-  ln -fs ${SCRIPT_PATH}/vimrc ~/.vimrc
-else
-  echo "ERROR: ~/.vimrc already exists, please remove then install again"
-fi
-
-if([ -h ~/.vim ] || [ ! -d  ~/.vim ]) then
+if($OVERWRITE || [ -h ~/.vim ] || [ ! -d  ~/.vim ]) then
   ln -fs ${SCRIPT_PATH}/vim ~/.vim
 else
   echo "ERROR: ~/.vim already exists, please remove then install again"
@@ -121,7 +125,7 @@ if which git &> /dev/null; then
         git config --global credential.helper osxkeychain
     fi
 
-    if [ "$1" != '-q' ]; then
+    if $REQUIRE_INPUT; then
         echo "Current Git user settings:"
         echo "user name/email: `git config --global --get user.name` / `git config --global --get user.email`"
         echo "gitub user/token: `git config --global --get github.user` / `git config --global --get github.token`"
@@ -156,6 +160,6 @@ else
     echo ""
 fi
 
-if [ "$1" != '-q' ]; then 
+if $REQUIRE_INPUT; then
     echo "Finished! To reload settings, run: source ~/.bash_profile"
 fi
