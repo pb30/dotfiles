@@ -3,7 +3,7 @@
 # Lets set our defaults
 REQUIRE_INPUT=true
 OVERWRITE=false
-declare -a symlinks=('bash_profile' 'inputrc' 'nanorc' 'screenrc' 'bashrc' 'colordiffrc' 'vimrc' 'vim')
+declare -a symlinks=('bash_profile' 'inputrc' 'nanorc' 'screenrc' 'bashrc' 'colordiffrc' 'vimrc')
 
 usage()
 {
@@ -58,6 +58,11 @@ do
     fi
 done
 
+if($OVERWRITE || [ -h ~/.vim ] || [ ! -d  ~/.vim ]) then
+  ln -fs ${SCRIPT_PATH}/vim ~/.vim
+else
+  echo "ERROR: ~/.vim already exists, please remove then install again"
+fi
 
 ###################### LOCALRC
 if([ ! -f  ~/.localrc ]) then
