@@ -15,8 +15,8 @@ alias dotsync=${SCRIPT_PATH}/bin/sync-dotfiles.sh
 export EDITOR=nano
 export PS1='\[\033[0;32m\]\u@\h\[\033[0;36m\]:\w\[\033[00m\]: '
 export HISTCONTROL=ignoreboth
-export HISTFILESIZE=5000
-export HISTSIZE=5000
+export HISTFILESIZE=50000
+export HISTSIZE=50000
 
 export ACK_OPTIONS="-i --sort-files --color --follow --group"
 
