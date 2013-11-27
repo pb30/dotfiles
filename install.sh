@@ -161,5 +161,12 @@ else
 fi
 
 if $REQUIRE_INPUT; then
+    read -p "Is this a production system? [n/y] " -e isProduction
+    if [ "$isProduction" == "y" ]; then
+        touch ${SCRIPT_PATH}/isProduction
+    fi
+fi
+
+if $REQUIRE_INPUT; then
     echo "Finished! To reload settings, run: source ~/.bash_profile"
 fi

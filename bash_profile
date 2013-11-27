@@ -13,7 +13,13 @@ alias dotsync=${SCRIPT_PATH}/bin/sync-dotfiles.sh
 
 ###################### Bash settings
 export EDITOR=nano
-export PS1='\[\033[0;32m\]\u@\h\[\033[0;36m\]:\w\[\033[00m\]: '
+
+if [ -f ${SCRIPT_PATH}/isProduction ]; then
+    export PS1='\[\033[0;31m\]\u@\h\[\033[0;36m\]:\w\[\033[00m\]: ' #red
+else
+    export PS1='\[\033[0;32m\]\u@\h\[\033[0;36m\]:\w\[\033[00m\]: '
+fi
+
 export HISTCONTROL=ignoreboth
 export HISTFILESIZE=50000
 export HISTSIZE=50000
