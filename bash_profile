@@ -17,6 +17,7 @@ export PS1='\[\033[0;32m\]\u@\h\[\033[0;36m\]:\w\[\033[00m\]: '
 export HISTCONTROL=ignoreboth
 export HISTFILESIZE=50000
 export HISTSIZE=50000
+export PROMPT_COMMAND="history -a;history -n;$PROMPT_COMMAND" # Write/read from bash history after each command
 
 export ACK_OPTIONS="-i --sort-files --color --follow --group"
 
