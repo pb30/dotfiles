@@ -7,3 +7,4 @@ install subversion
 install the_silver_searcher
 install tree
 install wget
+install aria2
