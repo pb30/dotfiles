@@ -17,7 +17,7 @@ export EDITOR=nano
 if [ -f ${SCRIPT_PATH}/isProduction ]; then
     export PS1='\[\033[0;31m\]\u@\h\[\033[0;36m\]:\w\[\033[00m\]: ' #red
 else
-    export PS1='\[\033[0;32m\]\u@\h\[\033[0;36m\]:\w\[\033[00m\]: '
+    export PS1='\[\033[0;32m\]\u@\h\[\033[0;36m\]:\w\[\033[00m\]: ' #green
 fi
 
 export HISTCONTROL=ignoreboth
@@ -78,7 +78,6 @@ if [ -f ~/.localrc ]; then
     source ~/.localrc
 fi
 
-#source ${SCRIPT_PATH}/z.sh
 source ${SCRIPT_PATH}/fasd/fasd
 eval "$(fasd --init auto)"
 alias v="fasd -e vim"
