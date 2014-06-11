@@ -81,6 +81,7 @@ fi
 source ${SCRIPT_PATH}/fasd/fasd
 eval "$(fasd --init auto)"
 alias v="fasd -e vim"
+alias vv="fasd -i -e vim"
 
 ######################  PATH + Private bin
 if [ -d ${SCRIPT_PATH}/bin ] ; then
