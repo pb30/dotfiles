@@ -43,6 +43,7 @@ set encoding=utf-8  " Encoding
 set modelines=0     " Disable modelines in files
 set showmatch       " Briefly highlight matching bracket when typing
 set wildmenu        " Show list/menu when tab completing commands
+set mouse=a         " Enable mouse use to select windows, tabs, resize
 let mapleader = "," " Remap leader from \
 set backspace=indent,eol,start
 if v:version >= 703
