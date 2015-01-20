@@ -10,6 +10,8 @@ alias df="df -h"
 alias h="history"
 alias g="git"
 
+alias time="date;time"
+
 alias vimupdate="vim +BundleInstall! +BundleClean +q"
 
 alias empty="cat /dev/null > "
