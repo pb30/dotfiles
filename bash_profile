@@ -48,7 +48,10 @@ bind '"\e[A"':history-search-backward
 bind '"\e[B"':history-search-forward
 bind '"\M-w"':"\"\C-k\C-ahistory | grep '^ *[0-9]* *\C-e.'\C-m\""
 bind Space:magic-space # `svn diff !:2` inserts 2nd arg from previous 
-#bind '"\C-\t":menu-complete'
+
+# Enable Ctrl+s to forward search through history http://stackoverflow.com/q/791765/6305
+[[ $- == *i* ]] && stty -ixon
+
 
 ###################### Mac Settings
 if [[ $OSTYPE == darwin1* ]]; then
