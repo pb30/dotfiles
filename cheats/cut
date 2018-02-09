@@ -1,0 +1,11 @@
+[38;5;246m# To cut out the third field of text or stdoutput that is delimited by a #:[39m
+[38;5;252mcut[39m[38;5;252m [39m[38;5;252m-d#[39m[38;5;252m [39m[38;5;252m-f3[39m
+
+[38;5;246m# First part, split by :[39m
+cut -d':' -f 1
+
+[38;5;246m# Get 2nd part and the following (with : as separator):[39m
+cut -d':' -f 2-
+
+[38;5;246m# All but the last (reverse string, cut, reverse back):[39m
+rev | cut -d':' -f 2- | rev

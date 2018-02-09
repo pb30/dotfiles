@@ -3,7 +3,7 @@
 # Lets set our defaults
 REQUIRE_INPUT=true
 OVERWRITE=false
-declare -a symlinks=('bash_profile' 'inputrc' 'nanorc' 'screenrc' 'bashrc' 'colordiffrc' 'vimrc')
+declare -a symlinks=('bash_profile' 'inputrc' 'nanorc' 'screenrc' 'bashrc' 'colordiffrc' 'vimrc' 'cheats')
 
 usage()
 {

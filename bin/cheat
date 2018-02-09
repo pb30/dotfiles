@@ -1,0 +1,30 @@
+#!/bin/sh
+
+CHEATDIR="$HOME/.cheats"
+COMMAND=$1
+
+while getopts ":e:" opt; do
+  case $opt in
+    e)
+      COMMAND=$2
+      if [ ! -f $CHEATDIR/$COMMAND ]; then
+          wget http://cheat.sh/$COMMAND -qO $CHEATDIR/$COMMAND
+      fi
+      "${EDITOR:-vi}" $CHEATDIR/$COMMAND
+      exit 1
+      ;;
+    \?)
+      echo "Invalid option: -$OPTARG" >&2
+      exit 1
+      ;;
+    :)
+      echo "Option -$OPTARG requires an argument." >&2
+      exit 1
+      ;;
+  esac
+done
+if [ -f $CHEATDIR/$COMMAND ]; then
+    cat $CHEATDIR/$COMMAND
+else
+    curl http://cheat.sh/$COMMAND
+fi
