@@ -98,7 +98,7 @@ copykey () {
         echo "Key exists..."
     else 
         echo "Key doesnt exist, creating..."
-        ssh-keygen -f ~/.ssh/id_rsa -b 2048
+        ssh-keygen -f ~/.ssh/id_rsa -b 4096
     fi
     if [ $1 ] ; then
         echo "Transferring..."
