@@ -128,7 +128,7 @@ if which git &> /dev/null; then
     if $REQUIRE_INPUT; then
         echo "Current Git user settings:"
         echo "user name/email: `git config --global --get user.name` / `git config --global --get user.email`"
-        echo "gitub user/token: `git config --global --get github.user` / `git config --global --get github.token`"
+        echo "github user/token: `git config --global --get github.user` / `git config --global --get github.token`"
         read -p "Change Git info? [n/y] " -e gitchange
         if [ "$gitchange" == "y" ]; then
 
