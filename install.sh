@@ -167,6 +167,11 @@ if $REQUIRE_INPUT; then
     fi
 fi
 
+###################### Mac Settings
+if [[ $OSTYPE == darwin1* ]]; then
+   defaults write com.apple.desktopservices DSDontWriteNetworkStores true
+fi
+
 if $REQUIRE_INPUT; then
     echo "Finished! To reload settings, run: source ~/.bash_profile"
 fi

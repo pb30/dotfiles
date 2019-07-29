@@ -55,7 +55,6 @@ bind Space:magic-space # `svn diff !:2` inserts 2nd arg from previous
 
 ###################### Mac Settings
 if [[ $OSTYPE == darwin1* ]]; then
-   defaults write com.apple.desktopservices DSDontWriteNetworkStores true
    alias ls='ls -hFG'
    export GREP_OPTIONS='--color=auto'
 fi
