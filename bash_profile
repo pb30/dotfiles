@@ -19,6 +19,7 @@ if [ -f ${SCRIPT_PATH}/isProduction ]; then
 else
     export PS1='\[\033[0;32m\]\u@\h\[\033[0;36m\]:\w\[\033[00m\]: ' #green
 fi
+#export PS1='\[\033[0;33m\]\u@\h\[\033[0;36m\]:\w\[\033[00m\]: ' #yellow
 
 export HISTCONTROL=ignoreboth
 export HISTFILESIZE=50000
