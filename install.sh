@@ -90,6 +90,7 @@ if which git &> /dev/null; then
     git config --global alias.cpk "cherry-pick"
     git config --global alias.dt "difftool"
     git config --global alias.diff "diff --word-diff"
+	git config --global alias.fp "push --force-with-lease"
 
     git config --global alias.last '!git lgs -1 --relative-date --graph HEAD'
     git config --global alias.last5 '!git lgs -5 --relative-date --graph HEAD'
