@@ -2,3 +2,5 @@ vim/bundle/*/
 vim/vim
 installs
 isProduction
+/bin/pycharm
+/bin/phpstorm

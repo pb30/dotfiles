@@ -90,3 +90,7 @@ alias vv="fasd -i -e vim"
 if [ -d ${SCRIPT_PATH}/bin ] ; then
     PATH="${SCRIPT_PATH}/bin:${SCRIPT_PATH}/bin/git-flow:$PATH"
 fi
+
+if [ -f "~/.docker/init-bash.sh" ]; then
+    source ~/.docker/init-bash.sh || true # Added by Docker Desktop
+fi
