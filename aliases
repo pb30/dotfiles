@@ -33,7 +33,7 @@ gitempty () {
 ###################### Gadgets
 alias ip="curl -s http://checkip.dyndns.com/ | sed 's/[^0-9\.]//g'"
 alias localip="ipconfig getifaddr en1"
-alias genpass="cat /dev/urandom | env LC_CTYPE=C tr -cd 'ABCDEFGHJKMNPQRSTUWXYZabcdefghjkmnpqrstuwxyz2-9' | head -c 30;echo ''"
+alias genpass="LC_ALL=C tr -dc '[:alnum:]' < /dev/urandom | fold -w40 | head -n1"
 alias webshare='python -c "import SimpleHTTPServer;SimpleHTTPServer.test()"' #Share current dir over localhost:8000
 
 u2d () {
