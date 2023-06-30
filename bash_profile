@@ -55,9 +55,13 @@ bind Space:magic-space # `svn diff !:2` inserts 2nd arg from previous
 
 
 ###################### Mac Settings
-if [[ $OSTYPE == darwin1* ]]; then
+if [[ $OSTYPE == darwin* ]]; then
    alias ls='ls -hFG'
    export GREP_OPTIONS='--color=auto'
+
+   portcheck() {
+      sudo lsof -i -P -n | grep LISTEN | grep :$1
+   }
 fi
 
 ###################### Load external scripts
