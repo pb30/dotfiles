@@ -1,3 +1,4 @@
+source ~/.profile
 SCRIPT_PATH="${BASH_SOURCE[0]}";
 if([ -h "${SCRIPT_PATH}" ]) then
   while([ -h "${SCRIPT_PATH}" ]) do SCRIPT_PATH=`readlink "${SCRIPT_PATH}"`; done
@@ -59,7 +60,7 @@ if [[ $OSTYPE == darwin* ]]; then
    alias ls='ls -hFG'
    export GREP_OPTIONS='--color=auto'
 
-   portcheck() {
+   whatport() {
       sudo lsof -i -P -n | grep LISTEN | grep :$1
    }
 fi
