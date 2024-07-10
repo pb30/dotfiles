@@ -121,6 +121,7 @@ if which git &> /dev/null; then
     git config --global merge.stat true
     git config --global merge.log true
     git config --global core.whitespace trailing-space
+	git config --global fetch.prune true
     
     if [[ $OSTYPE == darwin1* ]] && which git-credential-osxkeychain &> /dev/null; then
         git config --global credential.helper osxkeychain
