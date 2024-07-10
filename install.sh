@@ -122,6 +122,15 @@ if which git &> /dev/null; then
     git config --global merge.log true
     git config --global core.whitespace trailing-space
 	git config --global fetch.prune true
+    git config --global alias.revdone "!f() {\
+      current_branch=\$(git branch --show-current);\
+      for branch in develop main master; do\
+        if git show-ref --verify --quiet refs/heads/\$branch; then\
+          git checkout \$branch && git branch -D \$current_branch && git pull;\
+          break;\
+        fi;\
+      done;\
+    }; f"
     
     if [[ $OSTYPE == darwin1* ]] && which git-credential-osxkeychain &> /dev/null; then
         git config --global credential.helper osxkeychain
