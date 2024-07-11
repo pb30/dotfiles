@@ -131,6 +131,15 @@ if which git &> /dev/null; then
         fi;\
       done;\
     }; f"
+    git config --global alias.dev "!sh -c 'git checkout develop && git pull'"
+    git config --global alias.main "!f() {\
+      for branch in main master; do\
+        if git show-ref --verify --quiet refs/heads/\$branch; then\
+          git checkout \$branch && git pull;\
+          break;\
+        fi;\
+      done;\
+    }; f"
     
     if [[ $OSTYPE == darwin1* ]] && which git-credential-osxkeychain &> /dev/null; then
         git config --global credential.helper osxkeychain
