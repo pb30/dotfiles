@@ -99,3 +99,5 @@ fi
 if [ -f "~/.docker/init-bash.sh" ]; then
     source ~/.docker/init-bash.sh || true # Added by Docker Desktop
 fi
+
+[ -f ~/.fzf.bash ] && source ~/.fzf.bash
