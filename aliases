@@ -134,3 +134,35 @@ alias svncf="svnstf C"
 alias svnurl="svn info | grep URL | awk  -F': ' '{ print \$2 }'"
 alias svnver="change-svn-wc-format.py"
 
+###################### Git
+# Function to open a Git repo in the browser
+openrepo() {
+  local remote_url=$(git config --get remote.origin.url)
+  if [[ -z "$remote_url" ]]; then
+    echo "Error: No remote 'origin' found for this repository."
+    return 1
+  fi
+
+
+  if [[ "$remote_url" == *"gitlab.com"* ]]; then
+    # GitLab
+    local repo_url=$(echo "$remote_url" | sed -E 's/git@gitlab\.com:([^/]+)\/([^/]+)\/([^.]+)\.git/\1\/\2\/\3/')
+    open "https://gitlab.com/$repo_url"  # Opens in default browser
+  elif [[ "$remote_url" == *"github.com"* ]]; then
+    # GitHub
+    local repo_url=$(echo "$remote_url" | sed -E 's/git@github\.com:([^/]+)\/([^.]+)\.git/\1\/\2/')
+    open "https://github.com/$repo_url" # Opens in default browser
+    elif [[ "$remote_url" == *"bitbucket.org"* ]]; then
+    # Bitbucket
+    local repo_url=$(echo "$remote_url" | sed -E 's/git@bitbucket\.org:([^/]+)\/([^.]+)\.git/\1\/\2/')
+    open "https://bitbucket.org/$repo_url" # Opens in default browser
+
+  elif [[ "$remote_url" == *"git"* ]]; then # Other git, try direct replace of common patterns
+      local repo_url=$(echo "$remote_url" | sed -E 's/git@(.*\.org|.*\.com|.*\.net):((\w|-|\/)+)(\.git)?/\1\/\3/')
+      open "https://$repo_url"
+  else
+    echo "Error: Unsupported Git hosting provider."
+    return 1
+  fi
+}
+
